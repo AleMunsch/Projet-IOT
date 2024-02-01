@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex justify-center items-start h-screen bg-gray-800">
+    <section class="px-8 md:px-32 mt-16 w-full flex flex-col gap-2">
+        <h1 class="text-3xl text-white font-bold">
+            Ajouter sonde
+        </h1>
+        <a class="underline text-blue-700" href="/sonde">Retour</a>
+
+        <form method="POST" action="/add" class="flex flex-col gap-4 mt-4 w-full md:w-1/2 mx-auto">
+            <div class="flex flex-col gap-1">
+                <label for="name" class="text-xl text-white font-bold">Name</label>
+                <input type="text" name="name" id="name"
+                    class="bg-white border border-teal-200 focus:border-teal-500 focus:outline-none px-2 py-1 rounded-lg">
+            </div>
+
+            <button type="submit"
+                class="bg-blue-500 hover:bg-blue-400 text-white font-bold p-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                Ajouter
+            </button>
+        </form>
+    </section>
+</body>
+
+</html>

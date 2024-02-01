@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex justify-center items-start h-screen bg-gray-800">
+    <section>
+        <div>
+            <div class="flex flex-col justify-center">
+                <div class="p-4">
+                    <p class="text-white"> Sun.R.U.here </p>
+                </div>
+                <button type="button" onclick="window.location.href='/sonde'"
+                    class="bg-blue-500 hover:bg-blue-400 text-white font-bold p-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                    Accès sondes
+                </button>
+            </div>
+            <div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 p-4">
+                    <!-- Ajout des cartes pour afficher les dernières données -->
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-lg font-bold mb-2">Données météo</h2>
+                        <ul>
+                            <li><strong>Température:</strong> {{ last_temperature }} °C</li>
+                            <li><strong>Humidité:</strong> {{ last_humidity }} %</li>
+                            <li><strong>Pression:</strong> {{ last_pressure }} hPa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap-4 p-4 flex justify-center items-center">
+                <img class="h-100% w-100% rounded-lg"
+                    src='/chart?param={"type":"bar", "title" : "température / humidité / Pression"}'
+                    alt="graph_compare" />
+            </div>
+            <div class="grid grid-cols-3 gap-4 flex p-4 justify-center items-center">
+                <div>
+                    <img class="h-100% w-100% rounded-lg" src='/chart?param={ "type":"bar", "title" : "humidité"}'
+                        alt="graph_humidite" />
+                </div>
+                <div>
+                    <img class="h-100% w-100% rounded-lg" src='/chart?param={ "type":"bar", "title" : "température"}'
+                        alt="graph_temp" />
+                </div>
+                <div>
+                    <img class="h-100% w-100% rounded-lg" src='/chart?param={ "type":"bar", "title" : "Pression"}'
+                        alt="graph_pression" />
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
